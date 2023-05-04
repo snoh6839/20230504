@@ -28,12 +28,9 @@ console.log("NOW.getMinutes() : " + NOW.getMinutes());
 console.log("--- 초 가져오기 (second) ---");
 console.log("NOW.getSeconds() : " + NOW.getSeconds());
 
-var pastDate = new Date ('2022-09-30 19:20:10')
-console.log((NOW.getFullYear() - pastDate.getFullYear()) + "년 " + ((NOW.getMonth() + 1) - (pastDate.getMonth() + 1)) + "개월 " + (NOW.getDate() - pastDate.getDate()) + "일 " + (NOW.getHours() - pastDate.getHours()) + "시간 " + (NOW.getMinutes() - pastDate.getMinutes()) + "분 " + (NOW.getSeconds() - pastDate.getSeconds()) + "초 지났습니다.");
-
-
+console.log("\n-------------------------------------------------------");
+console.log("기준일에서 현재날짜 비교하기 / 기준일 = 2022-09-30T19:20:10");
 var pastDate = new Date('2022-09-30T19:20:10');
-var NOW = new Date();
 var diff = NOW.getTime() - pastDate.getTime();
 
 var year = Math.floor(diff / (1000 * 60 * 60 * 24 * 365));
