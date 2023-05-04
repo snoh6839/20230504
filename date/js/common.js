@@ -30,3 +30,22 @@ console.log("NOW.getSeconds() : " + NOW.getSeconds());
 
 var pastDate = new Date ('2022-09-30 19:20:10')
 console.log((NOW.getFullYear() - pastDate.getFullYear()) + "년 " + ((NOW.getMonth() + 1) - (pastDate.getMonth() + 1)) + "개월 " + (NOW.getDate() - pastDate.getDate()) + "일 " + (NOW.getHours() - pastDate.getHours()) + "시간 " + (NOW.getMinutes() - pastDate.getMinutes()) + "분 " + (NOW.getSeconds() - pastDate.getSeconds()) + "초 지났습니다.");
+
+
+var pastDate = new Date('2022-09-30T19:20:10');
+var NOW = new Date();
+var diff = NOW.getTime() - pastDate.getTime();
+
+var year = Math.floor(diff / (1000 * 60 * 60 * 24 * 365));
+diff -= year * (1000 * 60 * 60 * 24 * 365);
+var month = Math.floor(diff / (1000 * 60 * 60 * 24 * 30));
+diff -= month * (1000 * 60 * 60 * 24 * 30);
+var day = Math.floor(diff / (1000 * 60 * 60 * 24));
+diff -= day * (1000 * 60 * 60 * 24);
+var hour = Math.floor(diff / (1000 * 60 * 60));
+diff -= hour * (1000 * 60 * 60);
+var minute = Math.floor(diff / (1000 * 60));
+diff -= minute * (1000 * 60);
+var second = Math.floor(diff / 1000);
+
+console.log(year + "년 " + month + "개월 " + day + "일 " + hour + "시간 " + minute + "분 " + second + "초 지났습니다.");
